@@ -1,0 +1,18 @@
+{
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start"
+	},
+	"dependencies": {
+		"antd": "^4.19.5",
+		"next": "latest",
+		"prop-types": "^15.8.1",
+		"react": "17.0.2",
+		"react-countup": "^6.2.0",
+		"react-dom": "17.0.2",
+		"react-visibility-sensor": "^5.1.1",
+		"swiper": "^8.0.7"
+	}
+}
