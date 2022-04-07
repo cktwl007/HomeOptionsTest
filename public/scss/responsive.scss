@@ -454,7 +454,10 @@
 		background: none;
 		overflow: visible;
 		animation:none;
+		background: url(/images/mobile_bg.png) no-repeat center;
+		background-size: cover;
 		&::before,&::after{
+			display: none;
 			content: '';
 			position: absolute; 
 			top: 0;
@@ -668,6 +671,8 @@
 		padding-bottom: 85px;
 		animation: none;
 		height: auto;
+		background: url(/images/mobile_bgs.png) no-repeat center;
+		background-size: cover;
 		.mobile-bg{
 			display: block;
 			position: absolute;

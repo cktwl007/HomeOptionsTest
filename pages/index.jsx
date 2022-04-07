@@ -82,11 +82,11 @@ const Home = () => {
 	return (
 		<>
 			<div className="home-banner">
-				<div className="mobile-bg">
+				{/* <div className="mobile-bg">
 					<div className="bg-top"></div>
 					<div className="bg-middle"></div>
 					<div className="bg-bottom"></div>
-				</div>
+				</div> */}
 				<div className="container">
 					<h3 className=' wow  fadeInDown' data-wow-delay=".2s">
 						Take control of your <br />
