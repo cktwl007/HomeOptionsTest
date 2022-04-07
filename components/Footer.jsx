@@ -1,12 +1,17 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-
 const Footer = () => {
+	const backToTopHandle = () =>{
+		window.scrollTo({'behavior': 'smooth', 'top': 0})
+	}
+	useEffect( () => {
+		
+	})
 	return (
 		<footer className="footer">
 			<div className="container">
 				<div className="go-top isMobile">
-					<button>
+					<button onClick={backToTopHandle}>
 						<span>Back to the top</span>
 						<i></i>
 					</button>
@@ -18,42 +23,44 @@ const Footer = () => {
 						</a>
 					</div>
 					<div className="navbar">
-						<div className="item">
-							<div className="title">
-								<span>OUR MARKETS</span>
-								<i></i>
-							</div>
-							<div className="content">
-								<div className="box">
-									<a >California</a>
-									<a >Colorado</a>
-									<a >Georgia</a>
-									<a >Nevada</a>
-									<a >Washington</a>
-									<a >Virginia</a>
+						<div className="navbar-box">
+							<div className="item" >
+								<div className="title">
+									<span>OUR MARKETS</span>
+									<i></i>
+								</div>
+								<div className="content">
+									<div className="box">
+										<a >California</a>
+										<a >Colorado</a>
+										<a >Georgia</a>
+										<a >Nevada</a>
+										<a >Washington</a>
+										<a >Virginia</a>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div className="item">
-							<div className="title">
-								<span>LEGAL</span>
-								<i></i>
-							</div>
-							<div className="content">
-								<div className="box">
-									<a >Privacy policy </a>
-									<a >Terms & conditions</a>
+							<div className="item">
+								<div className="title">
+									<span>LEGAL</span>
+									<i></i>
+								</div>
+								<div className="content">
+									<div className="box">
+										<a >Privacy policy </a>
+										<a >Terms & conditions</a>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div className="item">
-							<div className="title">
-								<span>SUPPORT</span>
-								<i></i>
-							</div>
-							<div className="content">
-								<div className="box">
-									<a >Get Help</a>
+							<div className="item">
+								<div className="title">
+									<span>SUPPORT</span>
+									<i></i>
+								</div>
+								<div className="content">
+									<div className="box">
+										<a >Get Help</a>
+									</div>
 								</div>
 							</div>
 						</div>

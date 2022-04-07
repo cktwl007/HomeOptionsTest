@@ -2,9 +2,7 @@ import React, {useEffect, useState } from 'react';
 import ReactDOM from "react-dom";
 import Head from 'next/head';
 import Link from 'next/link';
-// 折叠面板
-import { Collapse } from 'antd';
-const { Panel } = Collapse;
+import Faq  from '../components/Faq'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {Navigation } from "swiper"
@@ -17,7 +15,39 @@ import CountUp from 'react-countup';
 import VisibilitySensor from "react-visibility-sensor";
 
 const Home = () => {
-	const [isPlay, setIsPlay] = useState(false);
+	const [labelId,setLabelId] = useState('')
+	const faqData = [
+		{
+			id:1,
+			title:"What does HomeOptions do?",
+			content:"We are a 100% free service that pays you to join. We build relationships with homeowners and real estate agents to take the hassle out of selling your home.",
+		},
+		{
+			id:2,
+			title:"Are there any hidden fees?",
+			content:"No. you don’t ever have to pay us.",
+		},
+		{
+			id:3,
+			title:"Do I have to pay you back?",
+			content:"There's no need to pay us back! The money we provide you is not a loan. We earn it back later by getting a referral fee from the agent's commission on your home sale.",
+		},
+		{
+			id:4,
+			title:"Who is eligible to apply?",
+			content:"Everyone who owns a property / part of a property is welcome to apply.",
+		},
+		{
+			id:5,
+			title:"What if I decide to not sell my home?",
+			content:"You don't have to sell your house at all. The program is designed to give people access to the best real estate agents when you are ready to sell. Most people join the program without knowing if they will ever sell their home. If you decide to never sell your home you still keep the money. That is a loss for us and a risk that we’ve already considered.",
+		},
+		{
+			id:6,
+			title:"Can I choose my own agent?",
+			content:"Simply connect us with your preferred agent and once they’ve successfully joined our network you are free to list your home through them.",
+		},
+	]
 	const countUpProps = {
 		star: 0,
 		duration: 1.5,
@@ -25,7 +55,30 @@ const Home = () => {
 		useGrouping: true,
 		separator: ','
 	}
-	let isLoading = true
+	const useScroll = () => {
+		useEffect( () => {
+			let height = document.querySelector('.wroks-wrap ul li').clientHeight;
+			let top = document.querySelector('.wroks-wrap').offsetTop;
+			let setp1 = top - 390;
+			let setp2 = top + height / 1.2 - 45;
+			let setp3 = top + (height * 2) - 45;
+			let handleScroll = () => {
+				let  winScrollTop = window.scrollY;
+				if(winScrollTop >= setp1 && winScrollTop <= setp2 ){
+					setLabelId('step1')
+				} 
+				if (winScrollTop >= setp2 && winScrollTop <= setp3 ){
+					setLabelId('step2')
+				} 
+				if (winScrollTop >= setp3){
+					setLabelId('step3')
+				} 
+			}
+			document.addEventListener('scroll',handleScroll,true);
+			return () => document.removeEventListener('scroll',handleScroll);
+		})
+	} 
+	useScroll()
 	return (
 		<>
 			<div className="home-banner">
@@ -64,70 +117,77 @@ const Home = () => {
 				</div>
 				<div className="tips">HomeOptions is a licensed real estate broker connecting customers with top agents</div>
 				<div className="picture">
-					<img id="picture" className={isLoading ? 'anit' : "" } src="/images/house.png" alt="" />
+					<img id="picture"  src="/images/house.png" alt="" />
 				</div>
 			</div>
-			<div className="home-works ">
+			<div className="wroks-wrap home-wroks">
 				<div className="container">
 					<div className="hd">
 						<h3>How it works</h3>
 					</div>
 					<div className="bd">
+						<div className="vertical-line"></div>
 						<ul>
-							<li className='step1'>
-								<div className="picture wow fadeInRight" data-wow-delay=".2s" data-wow-duration="1.4s">
-									<div className="bg bg1 " ><img src="/images/rectangle_01.png" alt="" /></div>
-									<div className="bg bg2"><img src="/images/rectangle_02.png" alt="" /></div>
-									<div className="img">
-										<img src="/images/img_02.png" alt="" />
-									</div>
+							<li id='page1'>
+								<div className="circle">
+									<i></i>
 								</div>
-								<div className="txt ">
-									<p className='step'>Step 1</p>
-									<h4>Discover your home’s value</h4>
-									<div className="desc">
-										Input basic information and find out how much cash you can get <br />
-										today if let us sell your home for you in the future. No committment <br />
-										here, just check it out.
-									</div>
+								<div className="number">Step 1</div>
+								<div className="title">Discover your home’s value</div>
+								<div className="desc">
+									Input basic information and find out how much cash you can get 
+									today if let us sell <br /> your home for you in the future. No committment here, just check it out.
+								</div>
+								<div className="img isMobile">
+									<img src="/images/mobile_14.png" alt=""/>
 								</div>
 							</li>
-							<li className='step2'>
-								<div className="picture wow fadeInLeft" data-wow-delay=".2s" data-wow-duration="1.4s">
-									<div className="bg bg1"><img src="/images/rectangle_03.png" alt="" /></div>
-									<div className="img">
-										<img src="/images/img_03.png" alt="" />
-									</div>
+							<li id='page2'>
+								<div className="circle">
+									<i></i>
 								</div>
-								<div className="txt">
-									<p className='step'>Step 2</p>
-									<h4>Hop on a call and receive cash</h4>
-									<div className="desc">
-										If you like the deal we offer you, our sales rep will hop on a call with <br />
-										you to go through details. Sign the contract and cash your check.
-									</div>
+								<div className="number" >Step 2</div>
+								<div className="title">Hop on a call and receive cash</div>
+								<div className="desc">
+									If you like the deal we offer you, our sales rep will hop on a call with you to go <br /> 
+									through details. Sign the contract and cash your check.
+								</div>
+								<div className="img isMobile">
+									<img src="/images/mobile_15.png" alt=""/>
 								</div>
 							</li>
-							<li className='step3'>
-								<div className="picture wow fadeInRight" data-wow-delay=".2s" data-wow-duration="1.4s">
-									<div className="bg bg1"><img src="/images/rectangle_04.png" alt="" /></div>
-									<div className="img">
-										<img src="/images/img_04.png" alt="" />
-									</div>
+							<li id='page3'>
+								<div className="circle">
+									<i></i>
 								</div>
-								<div className="txt">
-									<p className='step'>Step 3</p>
-									<h4>
-										Sell with America’s top 10% real <br />
-										estate agents when you are ready
-									</h4>
-									<div className="desc">
-										A good agent vs an agent from discount platform helps you at least <br />
-										sell your home at a 20% higher price. We only partner with the best.
-									</div>
+								<div className="number">Step 3</div>
+								<div className="title">
+									Sell with America’s top 10% real <br />
+									estate agents when you are ready
+								</div>
+								<div className="desc">
+									A good agent vs an agent from discount platform helps you at least 
+									sell your home <br /> 
+									at a 20% higher price. We only partner with the best.
+								</div>
+								<div className="img isMobile">
+									<img src="/images/mobile_16.png" alt=""/>
 								</div>
 							</li>
 						</ul>
+						<div className="wroks-anim-sticky" id={labelId}>
+							<div className="wroks-anim">
+								<div className="item home-step1-anim">
+									<img className="pictrue" src="/images/img_02.png" alt=""/>
+								</div>
+								<div className="item home-step2-anim">
+									<img className="pictrue" src="/images/img_03.png" alt=""/>
+								</div>	
+								<div className="item home-step3-anim">
+									<img className="pictrue" src="/images/img_04.png" alt=""/>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -359,74 +419,16 @@ const Home = () => {
 							<input type="text" placeholder='Enter your email' />
 							<button>Subscribe</button>
 						</div>
-						<div className={`play ${ isPlay ? "active" : ""}`}>
-							<div className="img" onClick={ () => setIsPlay(true) }>
+						<div className="play">
+							{/* <div className="img" onClick={ () => setIsPlay(true) }>
 								<img src="/images/img_07.png" alt="" />
-							</div>
+							</div> */}
 							<iframe className='video-box' width="100%" height="100%" src="https://www.youtube.com/embed/itB0B6n3tsg" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="faq-wrap">
-				<div className="container">
-					<div className="bd">
-							<div className="left">
-								<h3>Frequently Asked Questions</h3>
-								<div className="desc">
-									<p className="tip">Don’t see the answer to your question here?</p>
-									<div className="us">
-											<p className="tit">Call us at</p>
-											<p className="phone">(800) 357-9992</p>
-									</div>
-									<p className="time">Mon to Fri 8:00AM to 9:00PM PST</p>
-									<p className="time">Sat / Sun 12:00PM to 8:00PM PST</p>
-								</div>
-							</div>
-							<div className="right">
-								<Collapse 
-									className='faq-collapse'
-									accordion 
-									expandIconPosition={'right'}
-								>
-									<Panel header="What does HomeOptions do?" key="1">
-											<p>
-											We are a 100% free service that pays you to join. We build relationships with homeowners and real estate agents to take the hassle out of selling your home.
-											</p>
-									</Panel>
-									<Panel header="Are there any hidden fees?" key="2">
-											<p>
-												No. you don’t ever have to pay us.
-											</p>
-									</Panel>
-									<Panel header="Do I have to pay you back?" key="3">
-											<p>
-											There's no need to pay us back! The money we provide you is not a loan. We earn it back later by getting a referral fee from the agent's commission on your home sale.
-											</p>
-									</Panel>
-									<Panel header="Who is eligible to apply?" key="4">
-											<p>
-											Everyone who owns a property / part of a property is welcome to apply.
-											</p>
-									</Panel>
-									<Panel header="What if I decide to not sell my home?" key="5">
-											<p>
-											You don't have to sell your house at all. The program is designed to give people access to the best real estate agents when you are ready to sell. Most people join the program without knowing if they will ever sell their home. If you decide to never sell your home you still keep the money. That is a loss for us and a risk that we’ve already considered.
-											</p>
-									</Panel>
-									<Panel header="Can I choose my own agent?" key="6">
-											<p>
-											Simply connect us with your preferred agent and once they’ve successfully joined our network you are free to list your home through them.
-											</p>
-									</Panel>
-								</Collapse>
-							</div>
-					</div>
-					<div className="sign-up-btn">
-							<a className="global-button">Sign Up Now</a>
-					</div>
-				</div>
-			</div>
+			<Faq data={faqData}></Faq>
 		</>
 	)
 }

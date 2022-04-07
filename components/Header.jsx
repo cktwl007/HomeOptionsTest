@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import ActiveLink from './ActiveLink'
-const Header = () => {
+import { useRouter } from 'next/router'
+const Header = (props) => {
+	const { asPath, isReady } = useRouter()
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [navBg, setNavBg] = useState(false);
-	const [navActive, setNavActive] = useState(false);
 	const changeNavBg = () => {
 		if (window.scrollY <= 0) {
 			setNavBg(false);
@@ -12,12 +13,26 @@ const Header = () => {
 			setNavBg(true);
 		}
 	}
+	
 	useEffect(() => {
+		if(window.outerWidth <= 1199){
+			if(isReady){
+				setIsMenuOpen(false)
+				setNavBg(false)
+			}
+		}
 		window.addEventListener('scroll', changeNavBg);
 		return () => {
 			window.removeEventListener('scroll', changeNavBg);
 		}
-	}, [])
+	}, [asPath,isReady])
+	// 移动端事件委托
+	const mobileIsNavFade = (e) =>{
+		if(e.target.className !== 'nav-box'){
+			setIsMenuOpen(false)
+			setNavBg(false)
+		}
+	}
 	return (
 		<header className='header'>
 			<div className={`header-fiexd ${navBg ? "bg-white" : ""}`}>
@@ -25,10 +40,10 @@ const Header = () => {
 					<div className="logo">
 						<Link  href="/"><a></a></Link>
 					</div>
-					<nav className={`nav ${isMenuOpen ? "show" : ""}`}>
+					<nav className={`nav ${isMenuOpen ? "show" : ""}`} onClick={mobileIsNavFade}>
 						<div className="nav-box">
 							<ul>
-								<li className="active" key="1">
+								<li key="1">
 									<ActiveLink activeClassName="active" href="/"><a>HOME</a></ActiveLink>
 								</li>
 								<li key="2">
