@@ -7,33 +7,54 @@ const Agent = () =>{
 	const faqData = [
 		{
 			id:1,
-			title:'What does HomeOptions do?',
-			content:'We are a 100% free service that pays you to join. We build relationships with homeowners and real estate agents to take the hassle out of selling your home.',
+			title:'Why would customers sign up with me?',
+			content:`We are giving homeowners a cash reward up to $8000 that would otherwise have been in the
+			pockets of ad platforms such as Facebook, Instagram or Zillow. Through signing up to
+			HomeOptions, not only can customers get the cash today without any obligation to sell their
+			home or repay us, they can access many exclusive deals to improve their home. Finally when
+			they are ready to sell their home, they can list with a trusted agent whom they have a long
+			relationship with - You.`,
 		},
 		{
 			id:2,
-			title:'Are there any hidden fees?',
-			content:'No. you don’t ever have to pay us.',
+			title:'What do I need to do to get the $400 cash bonus?',
+			content:`All you need to do is to walk through the contract with the customers and help them sign up!
+			We have a simple user-friendly digital platform that requires minimal effort on your end, all
+			of the manual operations is taken care of. You will get paid the same day your customer
+			receives the cash (typically within 2 business days after signing the contract).`,
 		},
 		{
 			id:3,
-			title:'Do I have to pay you back?',
-			content:"There's no need to pay us back! The money we provide you is not a loan. We earn it back later by getting a referral fee from the agent's commission on your home sale.",
+			title:'How can I be guaranteed to my future business?',
+			content:`For every customer you bring onto HomeOptions, you will be the default listing agent when
+			they are ready to sell. Moreover, in both the customer and agent portal, we have built in
+			special features such as “seamless sharing of deals” that will help reinforce a long-term
+			customer-agent relationship. In rare scenarios where a customer you brought in explicitly
+			requests a change of listing agent, you will be given another lead of similar property value
+			to compensate your effort for signing this customer up initially.`,
 		},
 		{
 			id:4,
-			title:"Who is eligible to apply?",
-			content:"Everyone who owns a property / part of a property is welcome to apply.",
+			title:"Will I get other leads apart from the customers I signed up?",
+			content:`
+			Yes! HomeOptions has many other customers who were not signed up by an agent. They need a top
+			listing agent like yourself to help them sell their homes when they are ready. We will send
+			you leads if there our customers in your area are in need of an agent.
+			`,
 		},
 		{
 			id:5,
-			title:'What if I decide to not sell my home?',
-			content:"You don't have to sell your house at all. The program is designed to give people access to the best real estate agents when you are ready to sell. Most people join the program without knowing if they will ever sell their home. If you decide to never sell your home you still keep the money. That is a loss for us and a risk that we’ve already considered.",
+			title:'What’s the fee model?',
+			content:`When customers sign up with HomeOptions and receive the cash reward up to $8,000, they have
+			delegated HomeOptions network agents to help them sell whenever they are ready. HomeOptions
+			will charge a referral fee when or if the transaction happens.`,
 		},
 		{
 			id:6,
-			title:'Can I choose my own agent?',
-			content:"Simply connect us with your preferred agent and once they’ve successfully joined our network you are free to list your home through them.",
+			title:'Will my brokerage have to sign up?',
+			content:`No. HomeOptions empowers agents just like you by helping you avoid the hurdles of client
+			acquisition. Our policy has and will always be agent-first, and thus we do not require your
+			brokerage to sign up with us.`,
 		},
 	] 
 	const useScroll = () => {
