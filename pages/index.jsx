@@ -163,7 +163,7 @@ const Home = () => {
 								<div className="number">Step 3</div>
 								<div className="title">
 									Sell with America’s top 10% real <br />
-									estate agents when you are ready
+									estate agents when you’re ready
 								</div>
 								<div className="desc">
 									A good agent vs an agent from discount platform helps you at least 

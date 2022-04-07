@@ -1,5 +1,6 @@
 @import "./base.scss";
 @media only screen and (max-width:$size-lg){
+	
 	.banner-wrap {
 		height: 720px;
 		h3{
@@ -167,7 +168,6 @@
 	.home-wroks{
 		ul{
 			li{
-				height: auto;
 				text-align: center;
 			}
 		}
@@ -269,6 +269,7 @@
 		ul {
 			li{
 				margin-bottom: 40px;
+				height: auto;
 			}
 			.title{
 				font-size: 24px;
