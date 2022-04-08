@@ -650,14 +650,15 @@
 		margin-bottom: 25px;
 		font-size: 55px;
 		line-height: 67px;
-		font-family: $fontBold;
+		letter-spacing: 1px;
+		font-family: "Montserrat_SemiBold";
 		color: #fff;
 	}
 
 	p {
 		margin-bottom: 50px;
 		font-size: 23px;
-
+		font-family: "Montserrat_SemiBold";
 		span {
 			font-family: $fontBold;
 		}
