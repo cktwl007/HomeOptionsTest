@@ -103,7 +103,6 @@
 			font-size: 25px;
 			font-family: $fontBold;
 		}
-
 		.title {
 			margin-bottom: 20px;
 			font-size: 40px;
@@ -111,7 +110,9 @@
 			color: #5B5FD4;
 			font-family: $fontBold;
 		}
-
+		.mobile-title{
+			display: none;
+		}
 		.desc {
 			font-size: 20px;
 			line-height: 28px;
@@ -727,6 +728,11 @@
 			z-index: 2;
 		}
 	}
+	#page3{
+		.title{
+			width: 450px;
+		}
+	}
 	.wroks-anim-sticky{
 		transform: translateX(40px);
 	}
@@ -858,6 +864,9 @@
 		font-size: 36px;
 		color: #052633;
 		font-weight: $fontSemiBold;
+		span{
+			color: #5b5fd4;
+		}
 	}
 	.mobile-title{
 		display: none;

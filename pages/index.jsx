@@ -139,7 +139,7 @@ const Home = () => {
 									today if let us sell <br /> your home for you in the future. No committment here, just check it out.
 								</div>
 								<div className="img isMobile">
-									<img src="/images/mobile_14.png" alt=""/>
+									<img src="/images/mobile_04.png" alt=""/>
 								</div>
 							</li>
 							<li id='page2'>
@@ -149,11 +149,10 @@ const Home = () => {
 								<div className="number" >Step 2</div>
 								<div className="title">Hop on a call and receive cash</div>
 								<div className="desc">
-									If you like the deal we offer you, our sales rep will hop on a call with you to go <br /> 
-									through details. Sign the contract and cash your check.
+									If you like the deal we offer you, our sales rep will hop on a call with you to go through details. Sign the contract and cash your check.
 								</div>
 								<div className="img isMobile">
-									<img src="/images/mobile_15.png" alt=""/>
+									<img src="/images/mobile_05.png" alt=""/>
 								</div>
 							</li>
 							<li id='page3'>
@@ -162,16 +161,14 @@ const Home = () => {
 								</div>
 								<div className="number">Step 3</div>
 								<div className="title">
-									Sell with America’s top 10% real <br />
+									Sell with America’s top 10% real 
 									estate agents when you’re ready
 								</div>
 								<div className="desc">
-									A good agent vs an agent from discount platform helps you at least 
-									sell your home <br /> 
-									at a 20% higher price. We only partner with the best.
+									A good agent vs an agent from discount platform helps you at least sell your home at a 20% higher price. We only partner with the best.
 								</div>
 								<div className="img isMobile">
-									<img src="/images/mobile_16.png" alt=""/>
+									<img src="/images/mobile_06.png" alt=""/>
 								</div>
 							</li>
 						</ul>
@@ -203,23 +200,11 @@ const Home = () => {
 									<div className="step">Step 1</div>
 									<div className="tit">Discover your home’s value</div>
 									<div className="desc">
-										Input basic information and find out <br/>
-										how much cash you can get  today if <br/>
-										let us sell your home for you in the <br/>
-										future. No committment here, just <br/>
-										check it out.
+										Input basic information and find out how much cash you can get today if let us sell your home for you in the future. No committment here, just check it out.
 									</div>
 								</div>
 								<div className="picture">
-									<div className="bg bg1">
-										<img src="/images/mobile_05.png" alt=""/>
-									</div>
-									<div className="bg bg2">
-										<img src="/images/mobile_06.png" alt=""/>
-									</div>
-									<div className="img">
-										<img src="/images/mobile_04.png" alt=""/>
-									</div>
+									<img src="/images/mobile_04.png" alt="" />
 								</div>
 							</li>
 							<li className="step2">
@@ -227,22 +212,11 @@ const Home = () => {
 									<div className="step">Step 2</div>
 									<div className="tit">Hop on a call & receive cash</div>
 									<div className="desc">
-										If you like the deal we offer you, our <br/>
-										sales rep will hop on a call with you to <br/>
-										go through details. Sign the contract <br/>
-										and cash your check. 
+										If you like the deal we offer you, our sales rep will hop on a call with you to go through details. Sign the contract and cash your check. 
 									</div>
 								</div>
 								<div className="picture">
-									<div className="bg bg1">
-										<img src="/images/mobile_08.png" alt=""/>
-									</div>
-									<div className="bg bg2">
-										<img src="/images/mobile_09.png" alt=""/>
-									</div>
-									<div className="img">
-										<img src="/images/mobile_07.png" alt=""/>
-									</div>
+									<img src="/images/mobile_05.png" alt="" />
 								</div>
 							</li>
 							<li className="step3">
@@ -254,22 +228,11 @@ const Home = () => {
 										are ready
 									</div>
 									<div className="desc">
-										A good agent vs an agent from <br/>
-										discount platform helps you at least <br/>
-										sell your home at a 20% higher price. <br/>
-										We only partner with the best.
+										A good agent vs an agent from discount platform helps you at least sell your home at a 20% higher price. We only partner with the best.
 									</div>
 								</div>
 								<div className="picture">
-									<div className="bg bg1">
-										<img src="/images/mobile_11.png" alt=""/>
-									</div>
-									<div className="bg bg2">
-										<img src="/images/mobile_12.png" alt=""/>
-									</div>
-									<div className="img">
-										<img src="/images/mobile_10.png" alt=""/>
-									</div>
+									<img src="/images/mobile_06.png" alt="" />
 								</div>
 							</li>
 						</ul>
@@ -291,7 +254,7 @@ const Home = () => {
 							you cash back directly for <br/>
 							choosing them. 
 						</p>
-						<h4>As a bonus, enjoy our exclusive deals!</h4>
+						<h4>As a bonus, enjoy our <span>exclusive deals!</span></h4>
 						<p>
 							Instead of putting money into digital marketing trying to convince you to use their <br />
 							products, our partners give you cash back directly for choosing them.
@@ -318,7 +281,7 @@ const Home = () => {
 						<VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
 							{({ isVisible }) => (
 								<span className='number'>
-									{isVisible ? <CountUp  end={248430}  {...countUpProps}  /> : '248430'}
+									{isVisible ? <CountUp  end={366663}  {...countUpProps}  /> : '366663'}
 								</span>
 							)}
 						</VisibilitySensor>

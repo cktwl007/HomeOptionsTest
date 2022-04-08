@@ -113,11 +113,13 @@
 			li{
 				padding: 0;
 				overflow: hidden;
+				height: auto;
 			}
 			.circle{
 				display: none;
 			}
 			.img{
+				margin: 40px 0 10px;
 				display: block;
 				text-align: center;
 			}
@@ -165,16 +167,7 @@
 			width: 75%;
 		}
 	}
-	.home-wroks{
-		ul{
-			li{
-				text-align: center;
-			}
-		}
-		.isMobile{
-			margin: 40px 0 30px;
-		}
-	}
+
 	.partner-wrap {
 		margin-top: 80px;
 		h4{
@@ -293,10 +286,10 @@
 		}
 	}
 	.home-wroks{
-		display: none;
+		display: block;
 	}
 	.mobil-home-works{
-		display: block;
+		display: none;
 		.container{
 			padding: 0;
 			overflow: hidden;
@@ -525,11 +518,13 @@
 		}
 		ul {
 			.number{
+				margin-bottom: 15px;
 				font-size: 20px;
 			}
 			.title{ 
+				margin-bottom: 15px;
 				font-size: 20px;
-				
+				line-height: 28px;
 			}
 			.desc{
 				font-size: 18px;
@@ -744,6 +739,13 @@
 			margin-top: 35px;
 		}
 	}
+	.home-wroks {
+		#page3 {
+			.title{
+				width: 310px;
+			}
+		}
+	}
 	.mobil-home-works {
 		li{
 			padding-bottom: 120px;
@@ -760,7 +762,9 @@
 			padding: 0 5%;
 		}
 		.picture{
-			float: right;
+			text-align: center;
+			width: 100%;
+			font-size: 0;
 		}
 	}
 	.partner-wrap {
@@ -780,9 +784,7 @@
 			padding: 0 10px;
 			text-align: center;
 			width: 100%;
-			font-family: $fontMedium;
 			display: block;
-			letter-spacing: 1px;
 		}
 		ul{
 			margin-top: 10px;
