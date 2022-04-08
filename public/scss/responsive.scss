@@ -81,6 +81,11 @@
 			font-size: 20px;
 		}
 	}
+	#page3{
+		.title{
+			width: 450px;
+		}
+	}
 }
 @media only screen and (max-width:$size-md){
 	.banner-wrap {
