@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import ActiveLink from './ActiveLink'
+import ActiveLink from '../../common/ActiveLink'
 import { useRouter } from 'next/router'
+import style from './header.module.scss'
 const Header = (props) => {
 	const { asPath, isReady } = useRouter()
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,40 +29,40 @@ const Header = (props) => {
 	}, [asPath,isReady])
 	// 移动端事件委托
 	const mobileIsNavFade = (e) =>{
-		if(e.target.className !== 'nav-box'){
+		if(e.target.className !== 'nav_box'){
 			setIsMenuOpen(false)
 			setNavBg(false)
 		}
 	}
 	return (
-		<header className='header'>
-			<div className={`header-fiexd ${navBg ? "bg-white" : ""}`}>
-				<div className="container">
-					<div className="logo">
+		<header className={style.header}>
+			<div className={ `${style.header_fiexd} ${navBg ? style.bg_white : ""}` }>
+				<div className={`container ${style.container}` }>
+					<div className={style.logo}>
 						<Link  href="/"><a></a></Link>
 					</div>
-					<nav className={`nav ${isMenuOpen ? "show" : ""}`} onClick={mobileIsNavFade}>
-						<div className="nav-box">
+					<nav className={ `${style.nav} ${isMenuOpen ? style.show : ""}`} onClick={mobileIsNavFade}>
+						<div className={style.nav_box}>
 							<ul>
 								<li key="1">
-									<ActiveLink activeClassName="active" href="/"><a>HOME</a></ActiveLink>
+									<ActiveLink activeClassName={style.active} href="/"><a>HOME</a></ActiveLink>
 								</li>
 								<li key="2">
-									<ActiveLink activeClassName="active" href="/about"><a>ABOUT US</a></ActiveLink >
+									<ActiveLink activeClassName={style.active} href="/about"><a>ABOUT US</a></ActiveLink >
 								</li>
 								<li key="3">
-									<ActiveLink activeClassName="active" href="/blogs"><a>BLOGS</a></ActiveLink >
+									<ActiveLink activeClassName={style.active} href="/blogs"><a>BLOGS</a></ActiveLink >
 								</li>
 								<li key="4">
-									<ActiveLink activeClassName="active" href="/agent"><a>AGENTS</a></ActiveLink >
+									<ActiveLink activeClassName={style.active} href="/agent"><a>AGENTS</a></ActiveLink >
 								</li>
 							</ul>
-							<div className="login-btn">
+							<div className={style.login_btn}>
 								<a className="global-button">Log In</a>
 							</div>
 						</div>
 					</nav>
-					<div className={`gh ${isMenuOpen ? "selected" : ""}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+					<div className={`${style.gh} ${isMenuOpen ? style.selected : ""}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
 						<a></a>
 					</div>
 				</div>

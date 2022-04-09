@@ -1,12 +1,12 @@
 import {useEffect } from 'react';
 import Head from 'next/head'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Header from '../components/component/Header/header'
+import Footer from '../components/component/Footer/footer'
 import "antd/dist/antd.css"
-import "../public/css/normalize.css"
+import "../public/css/normalize.css" 
 import "../public/scss/common.scss"
-import "../public/scss/style.scss"
-import "../public/scss/responsive.scss"
+// import "../public/scss/style.scss"
+// import "../public/scss/responsive.scss"
 const MyApp = ({ Component, pageProps }) => {
 	useEffect(()=>{
 		new WOW().init();

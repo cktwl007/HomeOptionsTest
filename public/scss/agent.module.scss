@@ -1,0 +1,302 @@
+@import "/public/scss/base.scss";
+.banner_wrap {
+	height: 825px;
+	color: #fff;
+	background: linear-gradient(90deg, #2600da, #f29e25);
+	// background-size: 1400% 300%;
+	// animation: dynamics 20s ease infinite;
+	overflow: hidden;
+	.container {
+		position: relative;
+		padding-top: 190px;
+		height: 100%;
+	}
+	.pictrue {
+		position: absolute;
+		right: -105px;
+		bottom: 0;
+		font-size: 0;
+	}
+
+	h3 {
+		margin-bottom: 40px;
+		font-size: 58px;
+		line-height: 71px;
+		font-family: $fontSemiBold;
+		color: #fff;
+	}
+
+	p {
+		font-family: $fontSemiBold;
+		a {
+			text-decoration: underline;
+		}
+	}
+
+	.tip {
+		font-family: $fontRegular;
+		font-size: 20px;
+	}
+
+	.btn {
+		margin: 40px 0 30px;
+		a {
+			width: 162px;
+			line-height: 50px;
+			font-family: $latoBold;
+			font-weight: bold;
+		}
+	}
+}
+
+
+.contact_wrap {
+	height: 338px;
+	background: linear-gradient(to right, rgb(38, 0, 218), rgb(242, 158, 37) 100%);
+	text-align: center;
+	.container {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+	}
+
+	.title {
+		margin-bottom: 20px;
+		font-family: $fontBold;
+		font-size: 72px;
+		color: #fff;
+	}
+
+	.desc {
+		margin-bottom: 35px;
+		font-size: 24px;
+		font-family: $fontMedium;
+	}
+
+	.form {
+		position: relative;
+		margin: 0 auto;
+
+		form {
+			display: flex;
+			align-items: center;
+			width: 630px;
+			height: 50px;
+		}
+
+		i {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 55px;
+			height: 100%;
+			background: url(../images/Mail.svg) no-repeat center;
+			background-size: 26px;
+		}
+
+		.input_block {
+			display: block;
+			padding-left: 55px;
+			padding-right: 15px;
+			flex: 1;
+			height: 100%;
+			border: 1px solid #D1DCE0;
+			border-radius: 4px 0 0 4px;
+			font-size: 18px;
+			font-family: $fontMedium;
+			background: #fff;
+			color: #636363;
+
+			&::-webkit-input-placeholder {
+				color: #636363;
+			}
+
+			&:-moz-placeholder {
+				color: #636363;
+			}
+
+			&:-ms-input-placeholder {
+				color: #636363;
+			}
+		}
+
+		.submit_btn {
+			width: 160px;
+			height: 50px;
+			background: #0F0F24;
+			color: #fff;
+			font-size: 18px;
+			font-family: $latoBold;
+			border: none;
+			border-radius: 0 4px 4px 0;
+			transition: all .3s;
+			cursor: pointer;
+			&:hover {
+				background: #5b5fd4;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width:$size-lg){
+	.banner_wrap {
+		height: 720px;
+		h3{
+			font-size: 40px;
+			line-height: 56px;
+		}
+		.pictrue{
+			right: 0;
+		}
+	}
+	
+	.contact_wrap {
+		.title{
+			font-size: 50px;
+		}
+		.desc{
+			font-size: 22px;
+		}	
+	}
+}
+@media only screen and (max-width:$size-md){
+	.banner_wrap {
+		height: 580px;
+		.container{
+			padding-top: 12vw;
+		}
+		.pictrue{
+			width: 58%;
+		}
+		h3{
+			font-size: 36px;
+		}
+	}
+	
+	.contact_wrap {
+		.title{
+			font-size: 32px;
+		}
+		.desc{
+			font-size: 18px;
+		}
+		.form {
+			.input_block{
+				font-size: 16px;
+			}
+			.submit_btn{
+				font-size: 16px;
+			}
+		}
+	}
+}
+@media only screen and (max-width:$size-sm){
+	.banner_wrap {
+		height: 475px;
+		.content{
+			width: 400px;
+		}
+		h3{
+			margin-bottom: 24px;
+			font-size: 30px;
+			line-height: 46px;
+		}
+		.btn{
+			margin: 30px 0 25px;
+		}
+	}
+}
+@media only screen and (max-width:$size-xs){
+	.banner_wrap {
+		position: relative;
+		height: auto;
+		background: none;
+		overflow: visible;
+		animation:none;
+		background: url(/images/mobile_bg.png) no-repeat center;
+		background-size: cover;
+		.pictrue{
+			display: none;
+		}
+		.content{
+			padding-top: 75px;
+			padding-bottom: 135px;
+			width: 100%;
+		}
+		h3{
+			margin-bottom: 35px;
+			margin-left: 20px;
+			font-size: 30px;
+		}
+		p{
+			margin-left: 20px;
+			line-height: 1.5;
+			font-size: 20px;
+			font-family: $fontRegular;
+		}
+		.tip{
+			margin: 0;
+			text-align: center;
+			font-size: 18px;
+			font-family: $latoSemibold;
+		}
+		.btn {
+			margin: 40px 0 35px;
+			a{
+				margin: 0 auto;
+			}
+		}
+	}
+	
+	.contact_wrap {
+		height:708px;
+		background: url(/images/mobile_bg2.png) no-repeat center;
+		background-size: 100% 100%;
+		.container{
+			display: block;
+			padding-top: 155px;
+		}
+		.title{
+			margin-bottom: 40px;
+			font-size:36px;
+			text-align: left;
+		}
+		.title,.desc{
+			width: 80%;
+			text-align: left;
+			line-height: 1.5;
+		}
+		.desc{
+			width: 73%;
+			margin-bottom: 70px;
+			font-size: 20px;
+		}
+		.form {
+			form{
+				width: 100%;
+				flex-wrap: wrap;
+			}
+			.input_block{
+				flex: none;
+				width: 100%;
+			}
+			.submit_btn{
+				margin: 0 auto;
+				margin-top: 45px;
+				border-radius: 5px;
+			}
+		}
+	}
+	
+	.cookies-popup-wrap {
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		.box{
+			width: 100%;
+		}
+	}
+}

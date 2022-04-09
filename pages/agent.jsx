@@ -1,7 +1,8 @@
 import React, {useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Faq  from '../components/Faq'
+import Faq  from '../components/component/Faq/faq'
+import style  from '../public/scss/agent.module.scss'
 const Agent = () =>{
 	const [labelId,setLabelId] = useState('')
 	const faqData = [
@@ -83,9 +84,9 @@ const Agent = () =>{
 	useScroll()
 	return (
 		<>
-			<div className="banner-wrap">
-				<div className="container">
-					<div className="content">
+			<div className={style.banner_wrap}>
+				<div className={`container ${style.container}`}>
+					<div className={style.content}>
 						<h3 className="isPc wow fadeInDown" data-wow-delay=".4s" data-wow-duration="1.4s">
 							No more unpredictable <br/>
 							marketing dollars,<br/>
@@ -96,18 +97,18 @@ const Agent = () =>{
 							unpredictable<br/>
 							marketing dollars
 						</h3>
-						<p className="isPc desc wow fadeInUp" data-wow-delay=".4s" data-wow-duration="1.4s">Lock in your future business today with HomeOptions.</p>
-						<p className="isMobile desc wow fadeInUp" data-wow-delay=".4s" data-wow-duration="1.4s">
+						<p className={`${style.desc} isPc  wow fadeInUp`} data-wow-delay=".4s" data-wow-duration="1.4s">Lock in your future business today with HomeOptions.</p>
+						<p className={`${style.desc} isMobile  wow fadeInUp`} data-wow-delay=".4s" data-wow-duration="1.4s">
 							Our leads close 100%. <br/>
 							Lock in your future business <br/>
 							today with HomeOptions.
 						</p>
-						<div className="btn wow fadeInUp" data-wow-delay=".4s" data-wow-duration="1.4s">
+						<div className={`${style.btn} wow fadeInUp`} data-wow-delay=".4s" data-wow-duration="1.4s">
 							<a className="global-button" >Sign Up Now</a>
 						</div>
-						<p className="tip wow fadeInUp" data-wow-delay=".4s" data-wow-duration="1.4s">Already signed up? <a >Log in</a></p>
+						<p className={`${style.tip} wow fadeInUp`} data-wow-delay=".4s" data-wow-duration="1.4s">Already signed up? <a >Log in</a></p>
 					</div>
-					<div className="pictrue">
+					<div className={style.pictrue}>
 						<img src="/images/img_01.png" alt="" />
 					</div>
 				</div>	
@@ -162,14 +163,14 @@ const Agent = () =>{
 						</ul>
 						<div className="wroks-anim-sticky" id={labelId}>
 							<div className="wroks-anim">
-								<div className="item step1-anim">
+								<div className="item step1_anim">
 									<img className="bg" src="/images/anim_01_bg1.png" alt=""/>
 									<picture>
 										<source media="(max-width:1024px)" srcSet="/images/mobile_01.png"/>
 										<img className="pictrue" src="/images/anim_01.png" alt=""/>
 									</picture>
 								</div>
-								<div className="item step2-anim">
+								<div className="item step2_anim">
 									<img className="bg bg-left" src="/images/anim_02_bg1.png" alt=""/>
 									<img className="bg bg-right" src="/images/anim_02_bg2.png" alt=""/>
 									<picture>
@@ -177,9 +178,9 @@ const Agent = () =>{
 										<img className="pictrue" src="/images/anim_02.png" alt=""/>
 									</picture>
 								</div>	
-								<div className="item step3-anim">
+								<div className="item step3_anim">
 									<img className="bg" src="/images/anim_03_bg.png" alt=""/>
-									<div className="anim-confetti">
+									<div className="anim_confetti">
 										<img className="c1 left" src="/images/left_01.png" alt=""/>
 										<img className="c2 left" src="/images/left_02.png" alt=""/>
 										<img className="c3 left" src="/images/left_03.png" alt=""/>
@@ -203,15 +204,15 @@ const Agent = () =>{
 					</div>
 				</div>
 			</div>
-			<div className="contact-wrap">
-				<div className="container">
-					<h3 className="title " >Get leads that close 100%</h3>
-					<p className="desc">Join hundreds of others and sign up today!</p>
-					<div className="form">
+			<div className={style.contact_wrap}>
+				<div className={`container ${style.container}`}>
+					<h3 className={style.title} >Get leads that close 100%</h3>
+					<p className={style.desc}>Join hundreds of others and sign up today!</p>
+					<div className={style.form}>
 						<form >
 							<i></i>
-							<input className="input-block" type="email" placeholder="Enter your email" />
-							<input className="submit-btn" type="submit" value="Sign Me Up" />
+							<input className={style.input_block} type="email" placeholder="Enter your email" />
+							<input className={style.submit_btn} type="submit" value="Sign Me Up" />
 						</form>
 					</div>
 				</div>

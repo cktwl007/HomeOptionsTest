@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-
+import style from './footer.module.scss'
 import { Modal, Button } from 'antd';
 
 
@@ -17,29 +17,29 @@ const Footer = () => {
 	})
 
 	return (
-		<footer className="footer">
+		<footer className={style.footer}>
 			<div className="container">
-				<div className="go-top isMobile">
+				<div className={`${style.go_top} isMobile`} >
 					<button onClick={backToTopHandle}>
 						<span>Back to the top</span>
 						<i></i>
 					</button>
 				</div>
-				<div className="bd">
-					<div className="logo">
+				<div className={style.bd}>
+					<div className={style.logo}>
 						<a>
 							<img src="/images/logo2.png" alt="" />
 						</a>
 					</div>
-					<div className="navbar">
-						<div className="navbar-box">
-							<div className="item" >
-								<div className="title">
+					<div className={style.navbar}>
+						<div className={style.navbar_box}>
+							<div className={style.item} >
+								<div className={style.title}>
 									<span>OUR MARKETS</span>
 									<i></i>
 								</div>
-								<div className="content">
-									<div className="box">
+								<div className={style.content}>
+									<div className={style.box}>
 										<a >California</a>
 										<a >Colorado</a>
 										<a >Georgia</a>
@@ -49,25 +49,25 @@ const Footer = () => {
 									</div>
 								</div>
 							</div>
-							<div className="item">
-								<div className="title">
+							<div className={style.item}>
+								<div className={style.title}>
 									<span>LEGAL</span>
 									<i></i>
 								</div>
-								<div className="content">
-									<div className="box">
+								<div className={style.content}>
+									<div className={style.box}>
 										<a onClick={ () => setIsDialogVisible(true) }>Privacy policy </a>
 										<a onClick={ () => setIsDialogVisible2(true) }>Terms & conditions</a>
 									</div>
 								</div>
 							</div>
-							<div className="item">
-								<div className="title">
+							<div className={style.item}>
+								<div className={style.title}>
 									<span>SUPPORT</span>
 									<i></i>
 								</div>
-								<div className="content">
-									<div className="box">
+								<div className={style.content}>
+									<div className={style.box}>
 										<a >Get Help</a>
 									</div>
 								</div>
@@ -75,11 +75,11 @@ const Footer = () => {
 						</div>
 					</div>
 				</div>
-				<div className="ft">
-					<div className="license">
+				<div className={style.ft}>
+					<div className={style.license}>
 						<i></i><span>CA DRE License #02141969</span>
 					</div>
-					<div className="copy">
+					<div className={style.copy}>
 						Copyright &copy; 2022 HomeOptions, Inc.
 					</div>
 				</div>
