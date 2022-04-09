@@ -231,62 +231,7 @@ img{
 		}
 	}
 }
-.cookies-popup-wrap {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	text-align: center;
-	width: 428px;
-	bottom: 32px;
-	right: 32px;
-	left: auto;
-	transform: none;
-	z-index: 99;
-	transition: all .5s;
-	opacity: 0;
-	visibility: hidden;
-	&.show{
-		opacity: 1;
-		visibility: visible;
-	}
-	.box {
-		padding: 30px;
-		background-color: #010304;
-		color: #fff;
-		height: 238px;
-		border-radius: 10px;
-		overflow: hidden;
-	}	
-	.desc {
-		text-align: left;
-		margin: 0 auto;
-		padding-bottom: 32px;
-		font-size: 12px;
-		line-height: 16px;
-		letter-spacing: 0px;
-		a{
-			text-decoration: underline;
-		}
-	}
-	.btns{
-		text-align: left;
-		button{
-			font-family: $latoBold;
-			color: #fff;
-			font-size: 14px;
-			border-radius: 50px;
-			background: transparent;
-			border: 2px solid transparent;
-			width: 120px;
-			height: 40px;
-			cursor: pointer;
-		}
-		.accept_btn{
-			border-color: #fff;
-			margin-right: 24px;
-		}
-	}
-}
+
 .wroks-wrap {
 	.hd {
 		margin: 100px 0 40px;
@@ -725,6 +670,62 @@ img{
 		background: url(../images/next.svg) no-repeat center;
 	}
 }
+.cookies-popup-wrap {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+	width: 428px;
+	bottom: 32px;
+	right: 32px;
+	left: auto;
+	transform: none;
+	z-index: 99;
+	transition: all .5s;
+	opacity: 1;
+	visibility: visible;
+	&.hidden{
+		opacity: 0;
+		visibility: hidden;
+	}
+	.box {
+		padding: 30px;
+		background-color: #010304;
+		color: #fff;
+		height: 238px;
+		border-radius: 10px;
+		overflow: hidden;
+	}	
+	.desc {
+		text-align: left;
+		margin: 0 auto;
+		padding-bottom: 32px;
+		font-size: 12px;
+		line-height: 16px;
+		letter-spacing: 0px;
+		a{
+			text-decoration: underline;
+		}
+	}
+	.btns{
+		text-align: left;
+		button{
+			font-family: $latoBold;
+			color: #fff;
+			font-size: 14px;
+			border-radius: 50px;
+			background: transparent;
+			border: 2px solid transparent;
+			width: 120px;
+			height: 40px;
+			cursor: pointer;
+		}
+		.accept-btn{
+			border-color: #fff;
+			margin-right: 24px;
+		}
+	}
+}
 @media only screen and (max-width:$size-lg){
 	body{
 		font-size: 16px !important;
@@ -945,5 +946,12 @@ img{
 			right: -5%;
 		}
 	}
-	
+	.cookies-popup-wrap {
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		.box{
+			width: 100%;
+		}
+	}
 }

@@ -2,16 +2,19 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import style from './footer.module.scss'
 import { Modal, Button } from 'antd';
-
-
 const Footer = () => {
 	const [isDialogVisible,setIsDialogVisible] = useState(false)
 	const [isDialogVisible2,setIsDialogVisible2] = useState(false)
-
+	const [isCookieTips,setIsCookieTips] = useState(true)
 	const backToTopHandle = () =>{
 		window.scrollTo({'behavior': 'smooth', 'top': 0})
 	}
-
+	const handledAccept = () => {
+		setIsCookieTips(false)
+	}
+	const handleManage = () => {
+		setIsCookieTips(false)
+	}
 	useEffect( () => {
 		
 	})
@@ -19,12 +22,6 @@ const Footer = () => {
 	return (
 		<footer className={style.footer}>
 			<div className="container">
-				<div className={`${style.go_top} isMobile`} >
-					<button onClick={backToTopHandle}>
-						<span>Back to the top</span>
-						<i></i>
-					</button>
-				</div>
 				<div className={style.bd}>
 					<div className={style.logo}>
 						<a>
@@ -34,7 +31,7 @@ const Footer = () => {
 					<div className={style.navbar}>
 						<div className={style.navbar_box}>
 							<div className={style.item} >
-								<div className={style.title}>
+								<div className={style.title} >
 									<span>OUR MARKETS</span>
 									<i></i>
 								</div>
@@ -253,6 +250,20 @@ HomeOptions is a web service that is wholly owned and operated by HomeOptions, I
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You also agree to the following: These Terms of Service shall be subject to and construed in accordance with the laws of the State of Delaware, without regard to its conflict of laws principles. If any part of these Terms of Service are determined to be invalid or unenforceable pursuant to applicable law including, but not limited to, the warranty disclaimers and liability limitations set forth above, then the invalid or unenforceable provision will be deemed superseded by a valid enforceable provision that most closely matches the intent of the original provision, and the remainder of the Agreement shall continue in effect. A printed version of this Agreement and of any notice given in electronic form shall be admissible in judicial or administrative proceedings based upon or relating to this agreement to the same extent and subject to the same conditions as other business documents and records originally generated and maintained in printed form. All rights not expressly granted herein are reserved to HomeOptions, Inc. <br />
 				</p>
 			</Modal>
+			{
+				isCookieTips && 
+				<div className={`cookies-popup-wrap ${isCookieTips ? '' : 'hidden'}`}>
+					<div className="box">
+						<div className="desc">
+							We use cookies to improve and customize our services, ensure compliance, and protect your account. By continuing to use HomeOptions, you agree to our use of cookies. To learn more about cookies and how to change your settings, view our <a onClick={ () => setIsDialogVisible(true) }>Privacy Policy</a>.
+						</div>
+						<div className="btns">
+							<button className="accept-btn" onClick={handledAccept}>Accept</button>
+							<button className="manage-btn" onClick={handleManage}>Manage</button>
+						</div>
+					</div>
+				</div>
+			}
 		</footer>
 	)
 }
